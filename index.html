@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        SpeedCalendar nth day Timer
+        (c) Kangping
+        http://speed-calendar.com
+    -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174991585-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-174991585-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpeedCalendar Timer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">         
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
+
+    <style type="text/css">
+        @font-face{
+            font-family: 'GGL-1';
+            src:url('./TitilliumWeb-SemiBold.ttf');
+        }
+
+        alldoc {
+            width: 460px; 
+            text-align: center;
+        }
+
+        #timer_pos {
+            font-size: 28pt;
+            font-family:'GGL-1';
+            text-align: center;
+        }
+        #str1 {
+            font-size: 20pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str11{
+            font-size: 15pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str12{
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str13{
+            font-size: 10pt;
+            font-family:'GGL-1';
+            color:blue;
+        }
+        #str14{
+            font-size: 10pt;;
+            font-family:'GGL-1';
+            color:red;
+        }
+        #str21{
+            font-size: 15pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str22{
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str23{
+            font-size: 10pt;
+            font-family:'GGL-1';
+            color:blue;
+        }
+        #str24{
+            font-size: 10pt;;
+            font-family:'GGL-1';
+            color:red;
+        }
+        #str31{
+            font-size: 15pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str32{
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str33{
+            font-size: 10pt;
+            font-family:'GGL-1';
+            color:blue;
+        }
+        #str34{
+            font-size: 10pt;;
+            font-family:'GGL-1';
+            color:red;
+        }
+        #str41{
+            font-size: 15pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str42{
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str43{
+            font-size: 10pt;
+            font-family:'GGL-1';
+            color:blue;
+        }
+        #str44{
+            font-size: 10pt;;
+            font-family:'GGL-1';
+            color:red;
+        }
+        #str51{
+            font-size: 15pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str52{
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str53{
+            font-size: 10pt;
+            font-family:'GGL-1';
+            color:blue;
+        }
+        #str54{
+            font-size: 10pt;;
+            font-family:'GGL-1';
+            color:red;
+        }
+
+       #str61 {
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }        
+        #str62 {
+            font-size: 18pt;
+            font-family:'GGL-1';
+            color:red;
+        }        
+        #str70 {
+            font-size: 11pt;
+            font-family:'GGL-1';
+            color:red;
+        }        
+        #str72 {
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str73 {
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str82 {
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        #str91 {
+            font-size: 12pt;
+            color:white;
+            font-family:'GGL-1';
+        }
+        #str1001 {
+            font-size: 12pt;
+            color:black;
+            font-family:'GGL-1';
+        }
+        
+
+        #lang_font {
+            font-size: 12pt;
+            font-family:'GGL-1';
+        }
+        #day0 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day1 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day2 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day3 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day4 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day5 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day6 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        #day7 {
+            font-size: 13pt;
+            font-family:'GGL-1';
+        }
+        
+        #container0 {
+            text-align: center; 
+            width: 360px; 
+        }
+                
+        #container1 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+            width: 360px; 
+            display:flex;
+        }
+
+        #container11 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+            width: 360px; 
+            background-color:lightcyan;
+        }
+
+        #container14 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+            width: 360px; 
+            background-color:#F0F8FF;
+        }
+
+        #weekstarts {
+            font-size: 11pt;
+            font-family:'GGL-1';
+        }
+
+        #container12 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: center; 
+            width: 360px; 
+            background-color:mintcream;
+        }
+        
+        #container2 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: left; 
+            width: 280px;
+            height:150px;
+            background-color:white;
+        }
+        
+        #container3 {
+            margin-left: auto; 
+            margin-right: auto; 
+            text-align: left; 
+            width: 250px;
+            background-color:white;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <alldoc>
+        <div id="timer_pos">
+            <div id="timer">00:00.000</div>
+        </div>
+
+        <div id="container2" style="text-align:left">
+            <div>
+                <a id="str1"></a>
+            </div>
+            <div>
+                <a id="str11"></a>
+                <a>     </a>
+                <a id="str12"></a>            
+                <a>  </a>
+                <a id="str13"></a>
+                <a id="str14"></a>
+            </div>
+            <div>
+                <a id="str21"></a>
+                <a>     </a>
+                <a id="str22"></a>
+                <a>     </a>
+                <a id="str23"></a>
+                <a id="str24"></a>
+                </div>
+            <div>
+                <a id="str31"></a>
+                <a>     </a>
+                <a id="str32"></a>
+                <a>     </a>
+                <a id="str33"></a>
+                <a id="str34"></a>
+            </div>
+            <div>
+                <a id="str41"></a>
+                <a>     </a>
+                <a id="str42"></a>
+                <a>     </a>
+                <a id="str43"></a>
+                <a id="str44"></a>
+            </div>
+            <div>
+                <a id="str51"></a>
+                <a>     </a>
+                <a id="str52"></a>
+                <a>     </a>
+                <a id="str53"></a>
+                <a id="str54"></a>
+            </div>
+        </div>
+        <div style=text-align:center>
+            <a id="str61"></a>
+            <a>   </a>
+            <a id="str62"></a>
+            <BR>
+        </div>
+
+            <BR>
+        <div style=text-align:center>
+            <img src="img-en-sun.png" id="day0" width="35" height=auto alt="SUN">
+            <img src="img-en-mon.png" id="day1" width="35" height=auto alt="MON">
+            <img src="img-en-tue.png" id="day2" width="35" height=auto alt="TUE">
+            <img src="img-en-wed.png" id="day3" width="35" height=auto alt="WED">
+            <img src="img-en-thu.png" id="day4" width="35" height=auto alt="THU">
+            <img src="img-en-fri.png" id="day5" width="35" height=auto alt="FRI">
+            <img src="img-en-sat.png" id="day6" width="35" height=auto alt="SAT">
+        </div>
+        <div id="container1"> 
+            <div class="input-field col s6 m2">
+                <select id = "targetLang">
+                    <option value="en" selected>English</option>
+                    <option value="jp">Japanese</option>
+                    <option value="cn">Chinese</option>
+                    <option value="kr">Korean</option>
+                    <option value="sp">Spanish</option>
+                    <option value="de">Deutsch</option>
+                </select>
+                <label>Language</label>
+            </div>
+            <div class="input-field col s6 m2">
+                <select id = "targetmode">
+                    <option value="long" selected>Competition</option>
+                    <option value="mid">Birthday</option>
+                    <option value="short">Real Life</option>
+                </select>
+                <label>Mode</label>
+            </div>
+        </div>
+        <div id="container1"> 
+            <div class="input-field col s6">
+                <select id = "displaymode">
+                    <option value="display" selected>Display</option>
+                    <option value="concentration">Concentration</option>
+                </select>
+                <label>Timer Display</label>
+            </div>
+            <div class="input-field col s6">
+                <select id = "weeksta">
+                    <option value="startmon" selected>on Mon (ISO8601)</option>
+                    <option value="startsun">on Sun</option>
+                </select>
+                <label>Week starts</label>
+            </div>
+        </div>
+        <div id="container1"> 
+            <div class="input-field col s3">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name_id" type="text" class="autocomplete">
+                <label for="name_id">Nickname</label>
+            </div>
+            <div class="input-field col s3">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="icon_telephone" type="text" class="autocomplete">
+                <label for="icon_telephone">any comments?</label>
+                </div>
+            </div>
+        </div>
+        <div id = "str70"></div>
+        <div id="container3"> 
+            <a id="str1001" href="" target="_blank" rel="noopener noreferrer"></a>
+            <table width = "360" style="border:none">
+                <tr style="border:none">
+                    <td><div id = "ggl_place"></div></td>
+                    <td><div id = "tw_place"></div></td>
+                    <td colspan ="2"><div id = "next_place"></div></td>              
+                </tr>
+            </table>
+            <br>
+        </div>
+        <div style=text-align:center>
+            <a id="str72"></a>
+            <a id="str73" href="http://speed-calendar.com/?page_id=134" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+        <div style=text-align:center>
+            <a id="str91">......................</a>
+
+        </div>
+
+    </alldoc>
+      
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+
+    var timer = document.getElementById('timer');    
+
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var nextC = document.getElementById("next_place");
+
+    var click0 = document.getElementById("day0");
+    var click1 = document.getElementById("day1");
+    var click2 = document.getElementById("day2");
+    var click3 = document.getElementById("day3");
+    var click4 = document.getElementById("day4");
+    var click5 = document.getElementById("day5");
+    var click6 = document.getElementById("day6");
+
+    var submit_click = document.getElementById("ggl_place");
+    var tw_click = document.getElementById("tw_place");
+    var next_click = document.getElementById("next_place");
+
+    var mimi = document.getElementById("str91");
+
+    var key_count = 0;
+
+    var inp1;
+    var inp2;
+    var inp3;
+    var inp4;
+    var inp5;
+
+    var random_date1;
+    var random_date2;
+    var random_date3;
+    var random_date4;
+    var random_date5;
+
+    var score = 0;
+    var dayString;
+    var noticeString;
+    var timingString;
+    var errorString;
+    var correctString;
+    var twitterString;
+
+    var startTime;
+    var elapsedTime = 0;
+    var timerId;
+    var timeToadd = 0;
+
+    var modeString;
+
+    var name_str = "";
+    var comment_str = "";
+
+    var lang_text = "";
+    var week_text = "";
+
+    //  初期表示
+    updateDayString();
+    str1.textContent = noticeString;
+
+    function updateTimeText(){
+        var m = Math.floor(elapsedTime / 60000);
+        var s = Math.floor(elapsedTime % 60000 / 1000);
+        var ms = elapsedTime % 1000;
+        m = ('0' + m).slice(-2); 
+        s = ('0' + s).slice(-2);
+        ms = ('0' + ms).slice(-3);
+        timer.textContent = m + ':' + s + '.' + ms;
+    }
+
+    function countUp(){
+
+        timerId = setTimeout(function(){
+            elapsedTime = Date.now() - startTime + timeToadd;
+            updateTimeText()
+            countUp();
+        },10);
+    }
+
+    function getRandomDate()
+    {
+        var mode_b = document.getElementById( "targetmode" ).value ;
+
+        var y1;
+        var m1;
+        var d1;
+        var y2;
+        var m2;
+        var d2;
+
+        if(mode_b == "short")
+        {
+            y1 = year-1;
+            m1 = month;
+            d1 = day;
+            y2 = year+1;
+            m2 = month;
+            d2 = day;
+            modeString = "Real Life mode";
+        } else if (mode_b =="mid")
+        {
+            y1 = year-80;
+            m1 = month;
+            d1 = day;
+            y2 = year;
+            m2 = month;
+            d2 = day;
+            modeString = "Birthday mode";
+        } else {
+            y1 = 1582;
+            m1 = 10;
+            d1 = 15;
+            y2 = 2582;
+            m2 = 10;
+            d2 = 15;
+            modeString = "Competition mode"
+        }
+
+        var d1 = new Date( y1, m1, d1 );
+        var d2 = new Date( y2, m2, d2 );
+
+        var diff_ms = d2 - d1;
+        var diff_ms_random = Math.random() * diff_ms;
+        var d_random = new Date();
+        d_random.setTime( d1.getTime() + diff_ms_random );
+
+        return d_random;
+    }
+
+    function getYMDfromDateObject( obj_d )
+    {
+        var y = obj_d.getFullYear();
+        var m = obj_d.getMonth() + 1;
+        if( m < 10 ) m = "0" + m;
+        var d = obj_d.getDate();
+        if( d < 10 ) d = "0" + d;
+        return "" + y + "/"+ m + "/" + d;
+    }
+
+
+    function updateDayString()
+    {
+        var node_a = document.getElementById( "targetLang" ).value ;
+        var node_b = document.getElementById( "weeksta" ).value ;
+
+        if (node_a == "en" && node_b == "startmon") {
+            dayString = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "CORRECT!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "English";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-en-sun.png";
+            document.getElementById("day1").src = "img-en-mon.png";
+            document.getElementById("day2").src = "img-en-tue.png";
+            document.getElementById("day3").src = "img-en-wed.png";
+            document.getElementById("day4").src = "img-en-thu.png";
+            document.getElementById("day5").src = "img-en-fri.png";
+            document.getElementById("day6").src = "img-en-sat.png";
+        }else if (node_a == "en" && node_b == "startsun") {
+            dayString = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "CORRECT!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "English";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-en-sun-2.png";
+            document.getElementById("day1").src = "img-en-mon-2.png";
+            document.getElementById("day2").src = "img-en-tue-2.png";
+            document.getElementById("day3").src = "img-en-wed-2.png";
+            document.getElementById("day4").src = "img-en-thu-2.png";
+            document.getElementById("day5").src = "img-en-fri-2.png";
+            document.getElementById("day6").src = "img-en-sat-2.png";
+        }else if (node_a == "jp" && node_b == "startmon") {
+            dayString = ["日曜","月曜","火曜","水曜","木曜","金曜","土曜"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "正解!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Japanese";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-jp-sun.png";
+            document.getElementById("day1").src = "img-jp-mon.png";
+            document.getElementById("day2").src = "img-jp-tue.png";
+            document.getElementById("day3").src = "img-jp-wed.png";
+            document.getElementById("day4").src = "img-jp-thu.png";
+            document.getElementById("day5").src = "img-jp-fri.png";
+            document.getElementById("day6").src = "img-jp-sat.png";
+        }else if (node_a == "jp" && node_b == "startsun") {
+            dayString = ["日曜","月曜","火曜","水曜","木曜","金曜","土曜"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "正解!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Japanese";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-jp-sun-2.png";
+            document.getElementById("day1").src = "img-jp-mon-2.png";
+            document.getElementById("day2").src = "img-jp-tue-2.png";
+            document.getElementById("day3").src = "img-jp-wed-2.png";
+            document.getElementById("day4").src = "img-jp-thu-2.png";
+            document.getElementById("day5").src = "img-jp-fri-2.png";
+            document.getElementById("day6").src = "img-jp-sat-2.png";
+        }else if (node_a == "cn" && node_b == "startmon") {
+            dayString = ["周日","周一","周二","周三","周四","周五","周六"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "正确!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Chinese";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-cn-sun.png";
+            document.getElementById("day1").src = "img-cn-mon.png";
+            document.getElementById("day2").src = "img-cn-tue.png";
+            document.getElementById("day3").src = "img-cn-wed.png";
+            document.getElementById("day4").src = "img-cn-thu.png";
+            document.getElementById("day5").src = "img-cn-fri.png";
+            document.getElementById("day6").src = "img-cn-sat.png";
+        }else if (node_a == "cn" && node_b == "startsun") {
+            dayString = ["周日","周一","周二","周三","周四","周五","周六"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "正确!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Chinese";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-cn-sun-2.png";
+            document.getElementById("day1").src = "img-cn-mon-2.png";
+            document.getElementById("day2").src = "img-cn-tue-2.png";
+            document.getElementById("day3").src = "img-cn-wed-2.png";
+            document.getElementById("day4").src = "img-cn-thu-2.png";
+            document.getElementById("day5").src = "img-cn-fri-2.png";
+            document.getElementById("day6").src = "img-cn-sat-2.png";
+        }else if (node_a == "kr" && node_b == "startmon") {
+            dayString = ["일욜","월욜","화욜","수욜","목욜","금욜","토욜"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "정답!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Korean";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-kr-sun.png";
+            document.getElementById("day1").src = "img-kr-mon.png";
+            document.getElementById("day2").src = "img-kr-tue.png";
+            document.getElementById("day3").src = "img-kr-wed.png";
+            document.getElementById("day4").src = "img-kr-thu.png";
+            document.getElementById("day5").src = "img-kr-fri.png";
+            document.getElementById("day6").src = "img-kr-sat.png";
+        }else if (node_a == "kr" && node_b == "startsun") {
+            dayString = ["일욜","월욜","화욜","수욜","목욜","금욜","토욜"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "정답!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Korean";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-kr-sun-2.png";
+            document.getElementById("day1").src = "img-kr-mon-2.png";
+            document.getElementById("day2").src = "img-kr-tue-2.png";
+            document.getElementById("day3").src = "img-kr-wed-2.png";
+            document.getElementById("day4").src = "img-kr-thu-2.png";
+            document.getElementById("day5").src = "img-kr-fri-2.png";
+            document.getElementById("day6").src = "img-kr-sat-2.png";
+        }else if (node_a == "sp" && node_b == "startmon") {
+            dayString = ["Do", "Lu","Ma","Mi","Ju","Vi","Sa"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "Correcta!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Spanish";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-sp-sun.png";
+            document.getElementById("day1").src = "img-sp-mon.png";
+            document.getElementById("day2").src = "img-sp-tue.png";
+            document.getElementById("day3").src = "img-sp-wed.png";
+            document.getElementById("day4").src = "img-sp-thu.png";
+            document.getElementById("day5").src = "img-sp-fri.png";
+            document.getElementById("day6").src = "img-sp-sat.png";
+        }else if (node_a == "sp" && node_b == "startsun") {
+            dayString = ["Do", "Lu","Ma","Mi","Ju","Vi","Sa"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "Correcta!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Spanish";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-sp-sun-2.png";
+            document.getElementById("day1").src = "img-sp-mon-2.png";
+            document.getElementById("day2").src = "img-sp-tue-2.png";
+            document.getElementById("day3").src = "img-sp-wed-2.png";
+            document.getElementById("day4").src = "img-sp-thu-2.png";
+            document.getElementById("day5").src = "img-sp-fri-2.png";
+            document.getElementById("day6").src = "img-sp-sat-2.png";
+        }else if (node_a == "de" && node_b == "startmon") {
+            dayString = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "Richtig!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Deutsch";
+            week_text = "Week starts on Monday";
+            document.getElementById("day0").src = "img-de-sun.png";
+            document.getElementById("day1").src = "img-de-mon.png";
+            document.getElementById("day2").src = "img-de-tue.png";
+            document.getElementById("day3").src = "img-de-wed.png";
+            document.getElementById("day4").src = "img-de-thu.png";
+            document.getElementById("day5").src = "img-de-fri.png";
+            document.getElementById("day6").src = "img-de-sat.png";
+        }else {
+            dayString = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+            noticeString = "Hit Any Key";
+            timingString = "";
+            errorString = "N/A ";
+            correctString = "Richtig!";
+            twitterString = "My latest SpeedCalendar record is: ";
+            lang_text = "Deutsch";
+            week_text = "Week starts on Sunday";
+            document.getElementById("day0").src = "img-de-sun-2.png";
+            document.getElementById("day1").src = "img-de-mon-2.png";
+            document.getElementById("day2").src = "img-de-tue-2.png";
+            document.getElementById("day3").src = "img-de-wed-2.png";
+            document.getElementById("day4").src = "img-de-thu-2.png";
+            document.getElementById("day5").src = "img-de-fri-2.png";
+            document.getElementById("day6").src = "img-de-sat-2.png";
+        }
+    }
+ 
+    click0.addEventListener("click", event => {
+        measuring("0");
+    });
+    click1.addEventListener("click", event => {
+        measuring("1");
+    });
+    click2.addEventListener("click", event => {
+        measuring("2");
+    });
+    click3.addEventListener("click", event => {
+        measuring("3");
+    });
+    click4.addEventListener("click", event => {
+        measuring("4");
+    });
+    click5.addEventListener("click", event => {
+        measuring("5");
+    });
+    click6.addEventListener("click", event => {
+        measuring("6");
+    });
+    nextC.addEventListener("click", event => {
+        measuring("9");
+    });
+    mimi.addEventListener("click", event => {
+        measuring("q");
+    });
+
+
+    document.body.addEventListener('keydown', (event) => {
+        
+        var node_b = document.getElementById( "weeksta" ).value ;
+
+        if (node_b == "startmon"){
+            measuring(event.key);
+        } else {
+            measuring(event.key -1);
+        }
+    })
+
+    submit_click.addEventListener("click", event => {
+        name_str = document.getElementById("name_id").value;
+        comment_str = document.getElementById("icon_telephone").value
+        if (name_str == "") {
+            str70.textContent = "Input your nickname";
+            return;
+        }
+
+        addRow();
+    });
+    tw_click.addEventListener("click", event => {
+        name_str = document.getElementById("name_id").value;
+        comment_str = document.getElementById("icon_telephone").value
+        window.open("https://twitter.com/intent/tweet?text="+ twitterString+ timer.textContent + " ("+modeString+")  " + name_str + " "+  comment_str  + " https://speed-calendar.com " +"&hashtags=SpeedCalendar");
+
+    });
+
+    function addRow(){
+        var gss_url = "https://script.google.com/macros/s/AKfycbyT859VWAIzSGYELaSJLVzjUZ4o9bQsafVWx-SZJkk-4KgtOhwl/exec?";
+        var p1 = name_str;
+        var p2 = timer.textContent;
+        var p3 = modeString;
+        var p4 = lang_text;
+        var p5 = week_text;
+        var p6 = comment_str;
+        location.href = gss_url+"p1="+p1+"&p2="+p2+"&p3="+p3+"&p4="+p4+"&p5="+p5+"&p6="+p6;
+    }
+
+    function measuring(key_in)
+    {
+        if (key_in == -1) {
+            key_in = 6;
+        }
+
+        if ( key_count == 0) {
+
+            updateDayString();
+
+            str1.textContent = noticeString;
+
+            startTime = Date.now();
+            countUp();
+
+            if (key_in == "q"){
+                random_date1 = new Date(1657, 1, 9);
+                random_date2 = new Date(2080, 9, 13);
+                random_date3 = new Date(2306, 4, 19);
+                random_date4 = new Date(1909, 3, 9);
+                random_date5 = new Date(1952, 10, 14);
+            } else {
+                random_date1 = getRandomDate();
+                random_date2 = getRandomDate();
+                random_date3 = getRandomDate();
+                random_date4 = getRandomDate();
+                random_date5 = getRandomDate();
+            }
+        } 
+
+        if(key_count == 0) {
+            str11.textContent = getYMDfromDateObject(random_date1);
+            str1.textContent = timingString;
+            if (document.getElementById("displaymode").value == "concentration"){
+                document.getElementById("timer").style.color = "#FFFFFF";
+            }
+            else
+            {
+                document.getElementById("timer").style.color = "#000000";
+            }
+        } else if (key_count == 1) {
+            inp1 = key_in;
+            if (inp1!=0 && inp1!=1 && inp1!=2 && inp1!=3 && inp1!=4 && inp1!=5 && inp1!=6) {
+                str12.textContent = errorString
+                str13.textContent = dayString[random_date1.getDay()];
+            } else if(random_date1.getDay() == inp1.toString()) {
+                str12.textContent = dayString[key_in];
+                str13.textContent = correctString;
+            } else {
+                str12.textContent = dayString[key_in];
+                str14.textContent = dayString[random_date1.getDay()];
+            }
+            str21.textContent = getYMDfromDateObject(random_date2);
+        } else if (key_count == 2) {
+            inp2 = key_in;
+            if (inp2!=0 && inp2!=1 && inp2!=2 && inp2!=3 && inp2!=4 && inp2!=5 && inp2!=6) {
+                str22.textContent = errorString;
+                str23.textContent = dayString[random_date2.getDay()];
+            } else if(random_date2.getDay() == inp2.toString()) {
+                str22.textContent = dayString[key_in];
+                str23.textContent = correctString;
+            } else {
+                str22.textContent = dayString[key_in];
+                str24.textContent = dayString[random_date2.getDay()];
+            }
+            str31.textContent = getYMDfromDateObject(random_date3);
+        } else if (key_count == 3) {
+            inp3 = key_in;
+            if (inp3!=0 && inp3!=1 && inp3!=2 && inp3!=3 && inp3!=4 && inp3!=5 && inp3!=6) {
+                str32.textContent = errorString;
+                str33.textContent = dayString[random_date3.getDay()];
+            } else if(random_date3.getDay() == inp3.toString()) {
+                str32.textContent = dayString[key_in];
+                str33.textContent = correctString;
+            } else {
+                str32.textContent = dayString[key_in];
+                str34.textContent = dayString[random_date3.getDay()];
+            }
+            str41.textContent = getYMDfromDateObject(random_date4);
+        } else if (key_count == 4) {
+            inp4 = key_in;
+            if (inp4!=0 && inp4!=1 && inp4!=2 && inp4!=3 && inp4!=4 && inp4!=5 && inp4!=6) {
+                str42.textContent = errorString;
+                str43.textContent = dayString[random_date4.getDay()];
+            } else if(random_date4.getDay() == inp4.toString()) {
+                str42.textContent = dayString[key_in];
+                str43.textContent = correctString;
+            } else {
+                str42.textContent = dayString[key_in];
+                str44.textContent = dayString[random_date4.getDay()];
+            }
+            str51.textContent = getYMDfromDateObject(random_date5);
+        } else if (key_count == 5) {
+            inp5 = key_in;
+            if (inp5!=0 && inp5!=1 && inp5!=2 && inp5!=3 && inp5!=4 && inp5!=5 && inp5!=6) {
+                str52.textContent = errorString;
+                str53.textContent = dayString[random_date5.getDay()];
+            } else if(random_date5.getDay() == inp5.toString()) {
+                str52.textContent = dayString[key_in];
+                str53.textContent = correctString;
+            } else {
+                str52.textContent = dayString[key_in];
+                str54.textContent = dayString[random_date5.getDay()];
+            }
+            if (random_date1.getDay() == inp1.toString()) {
+                ++score;
+            }
+            if ( random_date2.getDay() == inp2.toString()) {
+                ++score;
+            }
+            if ( random_date3.getDay() == inp3.toString()) {
+                ++score;
+            }
+            if ( random_date4.getDay() == inp4.toString()) {
+                ++score;
+            }
+            if ( random_date5.getDay() == inp5.toString()) {
+                ++score;
+            }        
+
+            document.getElementById("timer").style.color = "#000000";
+            str61.textContent = "SCORE: ";
+            str62.textContent = score.toString();
+
+            clearTimeout(timerId);
+            timeToadd += Date.now() - startTime;
+            
+            if (score >= 5) {
+                document.getElementById("ggl_place").innerHTML= '<a class="waves-effect waves-light btn-small">Submit</a>';
+                document.getElementById("tw_place").innerHTML= '<a class="waves-effect waves-light btn-small">Twitter</a>';
+                document.getElementById("next_place").innerHTML= '<a class="waves-effect waves-light btn-small blue">Next</a>';
+            }else{
+                document.getElementById("next_place").innerHTML= '<a class="waves-effect waves-light btn-small blue">Next (or press"9")</a>';
+            }
+            str72.textContent = "";
+            str73.textContent = "SpeedCalendar Terms & Conditions";
+       
+        }else if (key_in == 9 || key_in == 8) {
+
+            key_count = -1;
+            score = 0;
+            str1.textContent = "";           
+            str11.textContent = "";
+            str12.textContent = "";
+            str13.textContent = "";
+            str14.textContent = "";
+            str21.textContent = "";
+            str22.textContent = "";
+            str23.textContent = "";
+            str24.textContent = "";
+            str31.textContent = "";
+            str32.textContent = "";
+            str33.textContent = "";
+            str34.textContent = "";
+            str41.textContent = "";
+            str42.textContent = "";
+            str43.textContent = "";
+            str44.textContent = "";
+            str51.textContent = "";
+            str52.textContent = "";
+            str53.textContent = "";
+            str54.textContent = "";
+            str61.textContent = "";
+            str62.textContent = "";
+            str70.textContent = "";
+            str72.textContent = "";
+            str73.textContent = "";
+            elapsedTime = 0;
+            timeToadd = 0;
+            str1.textContent = noticeString;
+            str1001.textContent = "";
+            timer.textContent="00:00.000";
+            document.getElementById("ggl_place").innerHTML= '';
+            document.getElementById("tw_place").innerHTML= '';
+            document.getElementById("next_place").innerHTML= '';
+
+        }
+
+        ++key_count;
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
